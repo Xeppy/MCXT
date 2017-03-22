@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+
+  "name": "msg-test",
+  "description": "message test",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+
+  "content_scripts": [{
+     "matches": ["*://*.bonfireemea.allegiancetech.com/*"],
+     "js": ["jquery-3.1.1.min.js","content.js"],
+     "run_at": "document_end"
+  }],
+
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "storage",
+    "http://*/*"
+  ]
+}
